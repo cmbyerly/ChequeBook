@@ -7,6 +7,11 @@ namespace MikkiBook2;
 
 public class ViewLocator : IDataTemplate
 {
+    /// <summary>
+    ///     Build
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
     public Control? Build(object? data)
     {
         if (data is null)
@@ -25,6 +30,11 @@ public class ViewLocator : IDataTemplate
         return new TextBlock { Text = "Not Found: " + name };
     }
 
+    /// <summary>
+    ///     Match
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
     public bool Match(object? data)
     {
         return data is ViewModelBase;
