@@ -91,4 +91,19 @@ public partial class MainWindow : Window
         var viewModel = (MainWindowViewModel)DataContext;
         viewModel.DeleteRecord().Wait();
     }
+
+    private void SelectingItemsControl_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (sender != null)
+        {
+            var dv = (ComboBox)sender;
+
+            if (dv.SelectedItem != null)
+            {
+                var item = (TransactionTypes)dv.SelectedItem;
+                var viewModel = (MainWindowViewModel)DataContext;
+                viewModel.IsCredit = item.IsCredit;
+            }
+        }
+    }
 }

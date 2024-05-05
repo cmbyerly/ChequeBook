@@ -28,18 +28,21 @@
             <Button Click="Delete_OnClick" HorizontalAlignment="Stretch" Margin="10">Delete</Button>
 
             <TextBlock>Balance</TextBlock>
-            <TextBlock Text="{Binding CurrentBalance}" FontSize="40" Margin="5" HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding CurrentBalance}" FontSize="40" Margin="7" HorizontalAlignment="Center" />
 
             <Button Click="New_OnClick" HorizontalAlignment="Stretch" Margin="10">New</Button>
 
             <TextBlock>Description</TextBlock>
-            <TextBox Text="{Binding CurrentDescription}" Margin="0, 0, 0, 5" />
+            <TextBox Text="{Binding CurrentDescription}" Margin="0, 0, 0, 7" />
 
             <TextBlock>Trans Date</TextBlock>
-            <DatePicker SelectedDate="{Binding CurrentTransactionDate}" Margin="0, 0, 0, 5" />
+            <DatePicker SelectedDate="{Binding CurrentTransactionDate}" Margin="0, 0, 0, 7" />
 
             <TextBlock>Trans Type</TextBlock>
-            <ComboBox SelectedItem="{Binding CurrentTransactionType}" ItemsSource="{Binding TransactionTypes}" Margin="0, 0, 0, 5">
+            <ComboBox
+                SelectionChanged="SelectingItemsControl_OnSelectionChanged"
+                SelectedItem="{Binding CurrentTransactionType}" 
+                ItemsSource="{Binding TransactionTypes}" Margin="0, 0, 0, 5">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding TransactionType}" />
@@ -48,18 +51,18 @@
             </ComboBox>
 
             <TextBlock>Rec Date</TextBlock>
-            <DatePicker SelectedDate="{Binding CurrentReconciledDate}" Margin="0, 0, 0, 5" />
+            <DatePicker SelectedDate="{Binding CurrentReconciledDate}" Margin="0, 0, 0, 7" />
 
             <TextBlock>Amount</TextBlock>
-            <TextBox Text="{Binding CurrentAmount}" Margin="0, 0, 0, 5" />
+            <TextBox Text="{Binding CurrentAmount}" Margin="0, 0, 0, 7" />
 
-            <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 5">
-                <TextBlock>Is Credit</TextBlock>
-                <CheckBox IsChecked="{Binding IsCredit}" />
-            </StackPanel>
+            <!-- <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 7"> -->
+            <!--     <TextBlock>Is Credit</TextBlock> -->
+            <!--     <CheckBox IsChecked="{Binding IsCredit}" /> -->
+            <!-- </StackPanel> -->
 
             <TextBlock>Check Number</TextBlock>
-            <TextBox Text="{Binding CurrentCheckNumber}" Margin="0, 0, 0, 5" />
+            <TextBox Text="{Binding CurrentCheckNumber}" Margin="0, 0, 0, 7" />
 
             <Button Click="Save_OnClick" HorizontalAlignment="Stretch" Margin="10">Save</Button>
         </StackPanel>
